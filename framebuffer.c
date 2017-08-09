@@ -31,7 +31,7 @@ void AttachDepthStencilBuffer(GLsizei SizeX, GLsizei SizeY) {
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, RenderbufferID);
 }
 
-// Create a flat render target with the given size and storage format (and no depth or stencil buffer)
+// Create a flat render target with the given size and storage format
 void CreateFramebuffer(GLenum Storage, GLsizei SizeX, GLsizei SizeY, GLuint *TextureIDOut, GLuint *FramebufferIDOut) {
     GLuint FBTexID = CreateFramebufferTexture(Storage, SizeX, SizeY);
 

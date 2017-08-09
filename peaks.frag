@@ -6,7 +6,7 @@ in vec2 vUV;
 
 out vec4 fragColor;
 
-vec4 Process(ivec2 Location, ivec2 Direction) {
+vec4 FindPeak(ivec2 Location, ivec2 Direction) {
     vec4 Color = vec4(0);
     float[3] Mags;
     for (int i = 0; i < 3; i++) {
@@ -27,7 +27,7 @@ void main() {
     ivec2 Location = ivec2(gl_FragCoord.xy);
     // Location.y = textureSize(uTexture, 0).y - Location.y;
 
-    vec4 Color = Process(Location, ivec2(1,0)) + Process(Location, ivec2(0,1));
+    vec4 Color = FindPeak(Location, ivec2(1,0)) + FindPeak(Location, ivec2(0,1));
 
     // fragColor = texelFetch(uTexture, Pixel, 0);
     fragColor = Color;
